@@ -1,7 +1,7 @@
-# xe-architecture
-XE Architecture: X-Slot Elasticity and Orchestrating N-Expert LLM Clusters via Dynamic VRAM Shuffling
+# XE Architecture: X-Slot Elasticity and Orchestrating N-Expert LLM Clusters via Dynamic VRAM Shuffling
 
-The XE Architecture (X-Slot Elasticity) is a minimalist, hardware-aware framework designed to orchestrate an ensemble of N specialized LLM experts within a constrained X-Slot VRAM environment.
+
+The XE Architecture (X-Slot Elasticity) is a hardware-aware framework designed to orchestrate an ensemble of N specialized LLM experts within a constrained X-Slot VRAM environment.
 
 This project was born out of economic necessity: the goal is to significantly reduce the cost of running high-parameter intelligence by utilizing Dynamic VRAM Shuffling. By treating the GPU as a transient cache rather than a static storage unit, the XE Architecture allows a single consumer-grade GPU to provide the breadth of a 10-model cluster with minimal efficiency drawbacks in the mid-term.
 
