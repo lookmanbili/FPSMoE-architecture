@@ -12,7 +12,11 @@ This project was born out of economic necessity: the goal is to significantly re
 - **Lower Energy Cost:** Standard LLM and MoE architectures require massive power to keep an entire GPU cluster idling and cooled, as every parameter must remain resident in VRAM. SMoE Architecture slashes energy consumption tremendously by operating on a single GPU. By only 'powering up' one expert in the X-Slot at a time, it eliminates the massive electrical overhead and industrial cooling requirements of enterprise data centers.
 
 
+
+
 <img width="722" height="510" alt="SMoE" src="https://github.com/user-attachments/assets/00ce7bda-5e32-4f71-a717-633e43a049fa" />
+
+
 
 
 # Key Components & Philosophy
