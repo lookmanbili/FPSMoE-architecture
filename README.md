@@ -11,6 +11,7 @@ This project was born out of economic necessity: the goal is to significantly re
 - **Lower VRAM Requirement:** Standard MoE forces all experts into VRAM, requiring expensive, multi-GPU setups. SMoE keeps experts in System RAM, only loading one into the "X-Slot" when needed. This allows users and enterprises to run massive, gazillion-parameter models on single consumer GPUs, slashing hardware costs tremendously.
 - **Lower Energy Cost:** Standard LLM and MoE architectures require massive power to keep an entire GPU cluster idling and cooled, as every parameter must remain resident in VRAM. SMoE Architecture slashes energy consumption tremendously by operating on a single GPU. By only 'powering up' one expert in the X-Slot at a time, it eliminates the massive electrical overhead and industrial cooling requirements of enterprise data centers.
 
+
 <img width="722" height="510" alt="SMoE" src="https://github.com/user-attachments/assets/00ce7bda-5e32-4f71-a717-633e43a049fa" />
 
 
