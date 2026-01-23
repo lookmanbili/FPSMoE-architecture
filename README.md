@@ -12,8 +12,6 @@ This project was born out of economic necessity: the goal is to significantly re
 
 - **Lower Energy Cost:** Standard LLM and MoE architectures require massive power to keep an entire GPU cluster idling and cooled, as every parameter must remain resident in VRAM. SMoE Architecture slashes energy consumption tremendously by operating on a single GPU. By only 'powering up' one expert in the X-Slot at a time, it eliminates the massive electrical overhead and industrial cooling requirements of enterprise data centers.
 
-- **Predictive Orchestration:** By decoupling the hardware-level Predictive Orchestrator from the software-level MoE Router, you move from reactive to proactive management. The Orchestrator "flags" and moves data before the Router even reaches the specific layer, ensuring weights are waiting in the X-Slot.
-
 
 
 <img width="751" height="281" alt="shuffledsmoe2" src="https://github.com/user-attachments/assets/df788269-be13-4d26-ada6-37b3d415dc02" />
@@ -21,9 +19,17 @@ This project was born out of economic necessity: the goal is to significantly re
 
 # Proposed Optimization Mechanisms
 
-- **Fractal Weight Loading :** Unlike standard MoE models that load massive, "atomic" expert blocks, this architecture utilizes Hierarchical Fractal Loading. By "zooming in" on specific task-neuron clusters (leaves) rather than entire domains (branches), we reduce the PCIe bandwidth requirement, enabling massive efficiency.
+- **Asynchronous X-Slot Management :** The X-Slot transforms VRAM from a static storage tank into a high-speed "revolving door." By managing *VRAM as an Asynchronous Buffer* dedicated to incoming fractal weights, you enable trillion-parameter models to run on consumer GPUs with virtually infinite context agility.
 
-- **Temporal Latency Masking :** This architecture leverages the Temporal Gap existing between user input and model execution to mitigate physical data-transfer bottlenecks. During the user-input phase or the initial token-parsing sequence, the Predictive Orchestrator initiates asynchronous background transfers. This mechanism effectively masks PCIe latency within the human-interaction window, ensuring that the necessary fractal weights are resident in the X-Slot before the execution phase commences.
+- **Fractal Weight Loading :** Unlike standard MoE models that load massive, "atomic" expert blocks, this architecture utilizes *Hierarchical Fractal Loading*. By "zooming in" on specific task-neuron clusters (leaves) rather than entire domains (branches), we reduce the PCIe bandwidth requirement, enabling massive efficiency.
+
+- **Temporal Latency Masking :** This architecture leverages the Temporal Gap existing between user input and model execution to mitigate physical data-transfer bottlenecks. During the user-input phase or the initial token-parsing sequence, the Predictive Orchestrator initiates *Asynchronous Background Transfers*. This mechanism effectively masks PCIe latency within the human-interaction window, ensuring that the necessary fractal weights are resident in the X-Slot before the execution phase commences.
+
+- **Predictive Orchestration:** By decoupling the hardware-level *Predictive Orchestrator* from the software-level MoE Router, you move from reactive to proactive management. The Orchestrator "flags" and moves data before the Router even reaches the specific layer, ensuring weights are waiting in the X-Slot.
+
+- **Dynamic Tree-Map Retraining:** The Self-Optimizing Index allows the Orchestrator to evolve through *Periodic Retraining*. It learns user-specific subject pivots and "prunes" unnecessary branches from the pre-load list. This personalization creates a localized, high-speed "neural shortcut" that gets faster the more it's used.
+
+
 
 # Core Pillars
 
