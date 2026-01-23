@@ -25,7 +25,7 @@ This project was born out of economic necessity: the goal is to significantly re
 
 - **Temporal Latency Masking :** This architecture leverages the Temporal Gap existing between user input and model execution to mitigate physical data-transfer bottlenecks. During the user-input phase or the initial token-parsing sequence, the Predictive Orchestrator initiates *Asynchronous Background Transfers*. This mechanism effectively masks PCIe latency within the human-interaction window, ensuring that the necessary fractal weights are resident in the X-Slot before the execution phase commences.
 
-- **Predictive Orchestration:** By decoupling the hardware-level *Predictive Orchestrator* from the software-level MoE Router, you move from reactive to proactive management. The Orchestrator "flags" and moves data before the Router even reaches the specific layer, ensuring weights are waiting in the X-Slot. The Predictive Orchestrator is a take on a rewiring mechanism feedback loop.
+- **Predictive Orchestration:** The Predictive Orchestrator acts as a rewiring mechanism feedback loop. The Orchestrator anticipates needs and pre-loads data into the X-Slot before the Router requests it. Implemented as a continuously retrained Tree-Map, it performs Conditional Selective Pre-fetching: monitoring user input in real-time, and only loads Fractal Leaf modules when high-precision semantic needs (e.g., Modular Arithmetic Opcodes) are identified. Selective Loading ensures the system remains responsive by triggering weight transfers only when high-precision needs are detected, effectively eliminating unnecessary VRAM swaps and micro-stutters. Meaning weights are mobilized asynchronously during typing to mask PCIe latency, but execution waits until the sentence is complete. This ensures the X-Slot is populated with the exact expert weights needed for lossless, high-accuracy inference at 20–30 TPS.
 
 - **Dynamic Tree-Map Retraining:** The Self-Optimizing Index allows the Orchestrator to evolve through *Periodic Retraining*. It learns user-specific subject pivots and "prunes" unnecessary branches from the pre-load list. This personalization creates a localized, high-speed "neural shortcut" that gets faster the more it's used.
 
@@ -93,7 +93,6 @@ VRAM holds only the micro "leaf" neurons required; for example, to solve a formu
 
 
 #21/01/2026
-
 #69
 
 
