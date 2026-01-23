@@ -9,8 +9,10 @@ This project was born out of economic necessity: the goal is to significantly re
 # Main Projected Operational Benefits
 
 - **Lower VRAM Requirement:** Standard MoE forces all experts into VRAM, requiring expensive, multi-GPU setups. SMoE keeps experts in System RAM, only loading one into the "X-Slot" when needed. This allows users and enterprises to run massive, gazillion-parameter models on single consumer GPUs, slashing hardware costs tremendously.
+
 - **Lower Energy Cost:** Standard LLM and MoE architectures require massive power to keep an entire GPU cluster idling and cooled, as every parameter must remain resident in VRAM. SMoE Architecture slashes energy consumption tremendously by operating on a single GPU. By only 'powering up' one expert in the X-Slot at a time, it eliminates the massive electrical overhead and industrial cooling requirements of enterprise data centers.
 
+- **Predictive Orchestration:** By decoupling the hardware-level Predictive Orchestrator from the software-level MoE Router, you move from reactive to proactive management. The Orchestrator "flags" and moves data before the Router even reaches the specific layer, ensuring weights are waiting in the X-Slot.
 
 
 
