@@ -84,7 +84,7 @@ Note Response - Yes, benchmarks are an absolute need that will be done in the mi
 
 Note - 01/22/2026 - **Edzomatic** (Reddit) asked "How is that different from On-Demand Swapping? Like mixtral-offloading ?"  
 
-Note Response - The (Fractal) SMoE architecture achieves lossless, unquantized accuracy by minimizing VRAM residency compared to traditional Mixtral-style offloading. By utilizing the Temporal Gap during human interaction, the Predictive Orchestrator performs Asynchronous Leaf-Loading—identifying and staging specific weight-leaves (e.g., Discrete Mathematics/Graph Theory) into the X-Slot before the user completes their input. This eliminates the "cold-start" latency of the PCIe bus, allowing for 20–30 TPS execution on 1T-parameter logic via granular, high-speed weight shuffles.
+Note Response - The (Fractal) SMoE architecture provides 100% accuracy with no quantization, as VRAM is not as heavily occupied as in Mixtral offloading. Human interaction is used to improve latency (passively, meaning the mobilization of weights begins as the user is typing) via a predictive orchestrator that is continuously refined as a fast-access "tree structure." VRAM holds only the micro "leaf" neurons required; for example, to solve a formula, the entire math model is not loaded, but rather a specific leaf such as Modular Arithmetic Opcodes, which utilizes significantly fewer weights.
 
 <img width="722" height="510" alt="SMoE" src="https://github.com/user-attachments/assets/00ce7bda-5e32-4f71-a717-633e43a049fa" />
 
