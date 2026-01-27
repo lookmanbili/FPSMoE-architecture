@@ -7,9 +7,9 @@ The FPSMoE Architecture circumvents this limit by introducing the X-Slot—a dyn
 ### Tradeoffs and strcutrural wse we beleve that:
  
 • Correctness and acceptable answers are more valuable than less accurate but faster ones.<br>
-• Using user typing time should be done, but not at the expense of false intent/context capture, by introducing a 100% validation process.
-• Hardware cost should be reduced to the maximum, but not at the cost of accuracy or acceptable response speed.
-• Energy consumption should be low, but not the lowest, as the offloading mechanisms come naturally with a slightly higher energy cost, though we assume that lower cost is paid for by smaller micro-expert weights.
+• Using user typing time should be done, but not at the expense of false intent/context capture, by introducing a 100% validation process.<br>
+• Hardware cost should be reduced to the maximum, but not at the cost of accuracy or acceptable response speed.<br>
+• Energy consumption should be low, but not the lowest, as the offloading mechanisms come naturally with a slightly higher energy cost, though we assume that lower cost is paid for by smaller micro-expert weights.<br>
 
 ***It introduces intent-aware static (periodically retrained) routing and context anticipation mechanisms that leverage user typing time for pre-analysis and expert prefetching. By treating system RAM as a weight warehouse and VRAM as a dynamic workspace, the architecture enables high-capacity models to operate on low-VRAM consumer hardware with significantly reduced energy consumption.***
 
