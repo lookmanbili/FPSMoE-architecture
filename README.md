@@ -25,7 +25,7 @@ This project was born out of economic necessity, aiming to reduce hardware costs
 
 # Main Projected Operational Benefits
 
-- **Lower VRAM Requirement:** Standard FPSMoE forces all experts into VRAM, requiring expensive, multi-GPU setups. FPSMoE keeps experts in System RAM, only loading one into the "X-Slot" when needed. This allows users and enterprises to run massive, gazillion-parameter models on single consumer GPUs, slashing hardware costs tremendously.
+- **Lower VRAM Requirement:** Standard MoE forces all experts into VRAM, requiring expensive, multi-GPU setups. FPSMoE keeps experts in System RAM, only loading one into the "X-Slot" when needed. This allows users and enterprises to run massive, gazillion-parameter models on single consumer GPUs, slashing hardware costs tremendously.
 
 - **Lower Energy Cost:** Standard LLM and FPSMoE architectures require massive power to keep an entire GPU cluster idling and cooled, as every parameter must remain resident in VRAM. FPSMoE Architecture slashes energy consumption and eliminates the massive electrical overhead and industrial cooling requirements of enterprise data centers.
 
